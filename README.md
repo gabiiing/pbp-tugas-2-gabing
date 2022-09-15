@@ -356,6 +356,19 @@ Ketika URLConf atau urls.py berhasil memukan fungsi views yang cocok. Views akan
     
 16.  Untuk memberitahu git berkas atau direktori yang tidak dipush ke repositori daring di github. Adapun isi dari berkas ini dapat di peroleh dari website [ini](https://Djangowaves.com/tips-tricks/gitignore-for-a-Django-project/).
 17.  Mengatur dan menambhakan konfigurasi berikut pada file settings.py di proyek Django:
+      ```shell
+      # Menambahkan STATIC_ROOT
+         import os
+         PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+         STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+      # Mengatur ALLOWED_HOSTS
+         ALLOWED_HOSTS = [“*”]
+      # Menambahkan middleware baru pada variabel MIDDLEWARE
+         MIDDLEWARE = [
+            ...,
+            'whitenoise.middleware.WhiteNoiseMiddleware',
+         ]
+       ```
 18.  Lakukan ```git add, commit, dan push``` perubahan di local computer ke repository github .
 19.  Buka link aplikasi yang telah dibuat di Heroku.
 20.  Connect akun github dengan aplikasi Heroku. Klik **“connect to github”.**
