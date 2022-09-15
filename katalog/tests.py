@@ -3,7 +3,7 @@ from katalog.models import CatalogItem
 
 # Create your tests here.
 class katalog_test(TestCase):
-    def create_dummy(self):
+    def setUp(self):
         CatalogItem.objects.get(item_name="Iphone XR", item_price=4000000, item_stock=100,
                                    description="New Iphone", rating=5, item_url="https://www.tokopedia.com/spiritcellular-1/iphone-xr-64gb-second-e-x-inter-original-no-minus-fullset-kuning?extParam=ivf%3Dfalse&src=topads")
 
