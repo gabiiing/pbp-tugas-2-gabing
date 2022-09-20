@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Spiderman: No Way Home",
+            "rating": 4,
+            "release_date": "13 Juni 2021",
+            "review": "Filmnya bagus, ada aksi dan ada lawaknya"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 2,
+        "fields": {
+            "watched": false,
+            "title": "One Piece Film: Red",
+            "rating": 4,
+            "release_date": "13 September 2022",
+            "review": "Untuk pertama kalinya, Uta - penyanyai paling dicintai akan mengungkapkan dirnya kepada dunia di konser langsungnya."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 3,
+        "fields": {
+            "watched": false,
+            "title": "Miracle In Cell No 7",
+            "rating": 5,
+            "release_date": "20 Agustus 2022",
+            "review": "Filmnya sedih bangettt :("
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 4,
+        "fields": {
+            "watched": true,
+            "title": "Pengabdi Setan 2",
+            "rating": 5,
+            "release_date": "23 Juli 2022",
+            "review": "Filmya susah ditebak dan menegangkan"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "Doctor Strange 2",
+            "rating": 5,
+            "release_date": "3 Mei 2022",
+            "review": "Harus ngerti dulu serial marvel sebelumnya biar paham film ini."
+        }
+    },    {
+        "model": "mywatchlist.WatchList",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "KKN di Desa Penari",
+            "rating": 3,
+            "release_date": "24 April 2022",
+            "review": "Banyak Jumpscare 0_o"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Teka Teki Tika",
+            "rating": 4,
+            "release_date": "14 April 2021",
+            "review": "Tidak sesuai ekspektasi"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Avanger",
+            "rating": 5,
+            "release_date": "20 Agustus 2020",
+            "review": "Mantap Bet"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Iron Man",
+            "rating": 4,
+            "release_date": "20 Agustus 2018",
+            "review": "Mantap boss Bagus Banget Loh"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk": 10,
+        "fields": {
+            "watched": true,
+            "title": "Spiderman",
+            "rating": 3,
+            "release_date": "20 Agustus 2018",
+            "review": "Aksinya mantap bet"
+        }
+    }
+   
+]
