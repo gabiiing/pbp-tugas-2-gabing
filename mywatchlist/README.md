@@ -2,167 +2,64 @@
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
 
+
 ## Creator
-Nama : Gabriel Zebaoth Krisopras Putra  
-
-NPM : 2106751480
-
-Kelas : PBP-D
-
+> Nama : Gabriel Zebaoth Krisopras Putra  
+> 
+> NPM : 2106751480
+> 
+> Kelas : PBP-D
 ## Output Tugas
 Berikut adalah link hasil pengerjaan tugas saya
 [Heroku Link](https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/).
 
+<br></br>
+# **Perbedaan JSON, XML, dan HTML**
+## **Apa itu JSON ?**
+**JSON** atau ***JavaScript Object Notation***, adalah sebuah format data berbasis teks dengan mengikuti sintaks seperti layaknya objek JavaScript. JSON diperkenalkan di awal tahun 2000 oleh Douglas Crockford. JSON digunakan sebagai alat untuk pertukaran data: memuat dan menampilkan informasi ke web secara responsif, menukarkan data dari website lain, dan menukarkan data antar platform dengan JSON API. JSON mempunyai syntax yang cukup sederhana. JSON menyimpan data dalam format map dengan pasangan key dan value. Key harus berupa String, sedangkan value dapat diisi dengan data primitif JavaScript apapun. JSON juga dapat diubah ke dalam bentuk string sehingga data yang sedang ditukar dapat dipahami dengan mudah. Format JSON adalah sebagai berikut.
 
-# Perbedaan JSON, XML, dan HTML
+## **Apa itu XML?**
+**XML** atau ***Extensible Markup Language*** adalah sebuah format untuk membantu proses penyimpanan dan pentransferan data. Format XML hampir mirip dengan HTML. Keduanya sama-sama menggunakan tag untuk mengenali sebuah value dari data. Tetapi, XML memungkinkan developer untuk membuat tagnya sendiri, tidak seperti HTML yang sudah baku dan paten. Dengan format ini, developer dapat mengirimkan atau saling menukar data antar sistem atau platform melalui layanan internet.
 
-## Apa itu JSON ?
+## **Apa itu HTML?**
+**HTML** atau ***HyperText Markup Language*** adalah sebuah format yang digunakan untuk membuat website atau bisa dibilang HTML ini merupakan pondasi untuk memuat seluruh konten dari sebuah website. HTML biasanya disandingkan dengan CSS (Cascading Style Sheet) untuk “mempercantik” bagian-bagian web. Misalnya, kita bisa membuat tabel di website dengan menggunakan tag HTML dan kita bisa mengubah warna atau teks tabel tersebut dengan menggunakan CSS. HTML menggunakan “markup” untuk membubuhi keterangan teks, gambar dan konten lain untuk ditampilkan di browser Web.HTML menyediakan tag atau elemen khusus, seprti body, div, h1, h2, link, a, ul, th, tr, dan masih banyak lagi
 
-MVT adalah sebuah arsitektur software design pattern yang digunakan oleh Django sebagai web framework. MVT adalah singkatan dari *Model*, *View*, dan *Template*.
+## **Apa perbedaan dari JSON, XML, dan HTML?**
+### **Perbedaan HTML dengan JSON dan XML**
+HTML memiliki fungsi yang berbeda dengan JSON dan XML. HTML hanya digunakan untuk menampilkan data ke sebuah website. HTML tidak dapat digunakan untuk menyimpan dan mengirim data antar sistem, platform, atau website seperti JSON dan XML. HTML juga bersifat statis karena fungsinya sendiri hanya untuk menampilkan data. HTML tidak dapat diuraikan atau di-parsed  dan digunakan oleh kebanyakan bahasa pemrograman tidak seperti JSON dan XML. 
 
-- **Models** ini merupakan salah satu sumber informasi dan data berkaitan dengan proyek Anda. Data yang disimpan di models ini dapat dimuat sebagai tampilan antarmuka yang dapat diakses oleh client. Models juga menentukan struktur data apa yang disimpan selama proyek dikembangkan. Struktur data yang dimaksud adalah seperti, ukuran maksimum, nilai default, opsi pilihan, dan lain sebagainya. Dalam hal komunikasi data, pengembang tidak perlu tahu kerumitannya, Django akan menangani hal tersebut secara otomatis. Django menyediakan  *automatically-generated database-access API* untuk menangani hal tersebut. Tambahan, setiap model merupakan subclass dari Django.db.models.Model. Setiap atribut  dari class tersebut merepresentasikan database field yang telah dikonfigurasi sebelumnya.
-- **Views** merupakan penghubung antara Model dan Template. Dalam bagian ini, ada beberapa fungsi Python yang menerima permintaan web dan mengembalikan respons web. Respon untuk klien di web dapat berupa HTML, XML, Error 404, Gambar, Form, Video, dan lainnya. Konfigurasi views dapat dilihat melalui file views.py di bagian folder proyek Django. Ketika pengguna mengunjungi url website kita, views memanggil fungsi yang terkait dengan url tersebut dan melakukan serangkaian proses di back-end untuk mengambil data dari model dan memberikan respon, dapat berupa html, xml, csv, atau sejenisnya. 
-- **Template** menangani semua bagian statis dari sebuah halaman web. Template dapat menghasilkan text-based format (HTML, XML, CSV, dan sebagainya)  kepada client web. Template mengandung variabel yang biasanya digantikan oleh sebuah nilai dan juga tags untuk mengatur logika dari template ini.
-  
+### **Perbedaan JSON dan XML**
+Meskipun JSON dan XML terlihat memiliki fungsionalitas yang sama tersebut tetapi keduanya memiliki karakteristik yang unik. Berikut adalah perbandingan antara JSON dengan XML.
+| **Parameter**                     | **XML**                                                                         | **JSON**                                                                                             |
+|-----------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| **Bahasa**                        | Sebuah markup dengan tag yang didefinisikan secara manual                       | Berupa formata dalam bentuk Objek JavaScript                                                         |
+| **Penyimpanan data**              | Data disimpan sebagai tree structure                                            | Data disimpan sebagai map: ada key dan value.                                                        |
+| **Pengolahan**                    | Dapat melakukan pemrosesan dan pemformatan dokumen dan objek                    | Tidak dapat melakukan pemrosesan dan perhitungan                                                     |
+| **Jenis File**                    | Ukuran besar dan lambat saat parsing                                            | Ukuran besar dan cepat saat parsing                                                                  |
+| **Dukungan Namespaces**           | Mendukung namespaces, komentar, dan metadata                                    | Tidak terdapat dukungan tersebut                                                                     |
+| **Ukuran dokumen**                | Ukuran dokumen besar degnan struktur tag yang tidak readable                    | Human readable                                                                                       |
+| **Jenis Tipe data yang didukung** | Mendukung bagan, charts, dan data non-primitif lain                             | JSON hanya berupa string, angka, boolean, objek, dan array dengan tidak mendukung data non-primitif  |
+| **UTF**                           | Mendukung UTF-8 dan UTF-16                                                      | Mendukung UTF dan ASCII                                                                              |
+| **Pengolahan data**               | Permintaan AJAX menjadi lambat karena bandwith untuk memproses tag sangat besar | Perminataan Ajak relatif cepat                                                                       |
 
+<br></br>
+# **Mengapa kita memerlukan *data* *delivery* dalam pengimplementasian sebuah platform ?**
 
+Dalam mengimplementasikan sebuah platform,  kita sebagai developer pasti ingin membuat semua fungsionalitas dari platform dapat berfungsi dengan baik. Kita tahu bahwa fungsionalitas setiap komponen platform itu berfungsi adalah input (requests) dan output (responses) sinkron. Dalam sebuah web-platform, ada banyak komponen:
+- Browser request HTML page, maka server juga harus mengembalikan HTML page.
+- Browser request style sheet, maka server juga harus mengembalikan CSS file.
+- Seterusnya berkalu untuk file JPG, JS, XML, JSON, dan data lainnya.
 
-## Bagaimana Cara Kerja Django ?
-![MVT diagram](/images/django-mvt-diagram.png)
-1. Client akan melakukan request melalui pengaksesan URL pada website. URL akan memilih views yang cocok dengan request client.
-2. Views akan menghubungkan request ke template. Namun, views perlu memastikan apakah ada data yang perlu diambil dari model. Jika ada, views akan meminta *QuerySet* ke model. 
-3. Models akan membuat struktur data sesuai *request*. Models akan melakukan data transaksi dengan *database*. Models akan mengambil data yang dibutuhkan sesuai permintaan views. Kemudian, data tersebut dikirim ke views.
-4. Views akan memilih templates .html  yang tepat untuk ditampilkan ke halaman web sebagai respon atas pengaksesan URL.
-
-## Bagaimana dengan Struktur Django ?
-### **Django Project**
-Dango telah memiliki sebuah template agar penggunanya tidak perlu membuat website dari awal. Nah, untuk belajar lebih lanjut tentang Django. Kita perlu tahu struktur dari Django itu sendiri.
-
-Project di Django merupakan paket python yang merepresentasikan keseluruhan web aplikasi. Project Django mempunya konfigurasi dan pengaturan terkait dengan webnya. Dalam sebuah project, ada beberapa App yang digunakan untuk fungsionalitas tertentu.
-
-Dalam sebuah website yang menggunakan framework Django, hierarki atau struktur filenya adalah sebagai berikut.
-```shell
-# ...\Django_website
-   \ env				   <= virtual environment
-   \django_project         <= ini adalah Django project
-   \django_app1            <= ini adalah Django app
-   \django_app2 	       <= ini adalah Django app
-      db.sqlite3           <= Database
-      manage.py            <= Django project management utility
-
-   ```
-Kemudian, file yang terdapat pada django_project adalah sebagai berikut.
-
-```shell
-# \mywebsite\project_django\
-\project_django
-    __init__.py
-    asgi.py 
-    settings.py
-    urls.py
-    wsgi.py
-```
-- **\_\_init\_\_.py** memberitahu Python bahwa folder ini adalah paket python.
-- **asgi.py** memunginkan server web yang kompatibel dengan ASGI dapat memuat website.
-- **settings.py** berisi pengaturan untuk proyek Django
-- **urls.py** berisi pengaturan router URL pada website.
-- **wsgi.py** memungkinkan server web yang kompatibel dengan WSGI dapat memuat website.
-
-### **Django App**
-Aplikasi Django merupakan submodul dari project yang dibuat untuk mengimplementasikan sebuah fungsionalitas tertentu. Django-app bisa berjumlah banyak dan dapat disesuaikan dengan kebutuhan.
-
-Setiap aplikasi yang dibuat perlu dihubungkan dengan projek Django. Hal ini dapat dilakukan dengan mengkonfigurasi file settings.py.
-```shell
-INSTALLED_APPS = [
-   'events.apps.EventsConfig',
-   'Django.contrib.admin',
-   # tambahkan nama aplikasi disini
-]
-
-```
-Adapun untuk struktur dari sebuah django_app adalah sebagai berikut.
-```shell
-\django_app
-    \migrations
-    __init__.py
-    admin.py
-    apps.py
-    models.py
-    tests.py
-    views.py
-```
-
-- **migrations** adalah tempat Django menyimpan migrasi model, atau perubahan ke database. 
-- **\_\_init\_\_.py**  menyatakan bahwa ini merupakan paket python.
-- **admin.py**  tempat Anda mendaftarkan model dengan aplikasi admin Django.
-- **apps.py** file konfigurasi umum untuk aplikasi Django.
-- **models.py** file models untuk aplikasi ini.
-- **tests.py** file testing untuk pengujian aplikasi.
-- **views.py** file untu mengkonfigurasikan models dan templates.
-
-## Django URLConf dan Views 
-Django memungkinkan pengembang untuk membuat skema URL yang bersih dan elegan. Setiap aplikasi di proyek Django memiliki sebuah URL. Proyek Django dapat dihubungkan dengan aplikasi lain dengan menggunakan sebuah modul bernama URLconf. Modul ini berfungsi untuk memetakan jalur URL sesuai dengan Views .Di dalam views, ada fungsi-fungsi tertentu untuk menampilkan laman web yang kode filenya terdapat di template. Tampilan dikirim melalui HttpResponse.
-
-> **Bagaimana kedua hal tersebut dapat bekerja?**
-1. Client request ke internet untuk membuka URL dari website Django.
-2. Internet request ke URLConf sesuai dengan alamat yang dikunjungi.
-3. Django akan menentukan modul root URLconf yang akan digunakan
-4. Kemudian, Django akan mencari variabel di urlpatterns dari modul tersebut.
-5. Ketika pola URL cocok dengan variabel di urlpatterns. Django mengimpor dan memanggil views. 
-6. emudian, views akan menghubungkan models dan templates.Lalu, tampilan HTML yang telah dirender akan disajikan kepada client.
-7. Ketika tidak ditemukan pola URL yang cocok, Django akan memberitahu client tampilan *error* / penanganan kesalahan.
-
-## Django Views and Templates
-
-Django template adalah sebuah text document atau penandaan python string menggunakan Django template language. Beberapa dibangun dengan menggunakan template engine.DI Django template, kita akan banyak menjumpai variables and tags. 
-
-Template di render dengan sebuah context. Context biasanya dapat diatur di views. Tahapan rendering mengganti variabel yang tertulis di template dengan data yang tersimpan di models.
-
-Proses yang terjadi antara views dan template adalah sebagai berikut.
-1. Ada request dari client ke internet untuk mengakses URL website Django.
-2. Request tersebut juga akan diteruskan ke dalam Proyek Django.
-3. Django akan memeriksa URL yang diakses oleh client apakah ada di urlpatterns > urls.py.
-4. Kemudian, Django akan mengekstraksi argumen dari request ke views.  
-5. Jika terdapat path di urlpatterns, maka Django akan memeriksa views dan juga Django App yang tersedia.
-6. Karena views tidak memerlukan sejumlah data dari models, views akan memilih template yang sesuai. Akhirnya, file HTML disajikan di laman web client.
-7. Jika tidak terdapat path di urlpatterns seperti url yang diminta client, maka Django akan merespon dengan menampilkan tampilan penanganan kesalahan (*error*).
-
-## Django Views and Models
-> **Apa yang terjadi jika views membutuhkan sejumlah data dari models ?**
-
-Ketika URLConf atau urls.py berhasil memukan fungsi views yang cocok. Views akan melakukan transfer data ke model. Views akan meminta sejumlah QuerySet dari model. Model akan mengambil dan memberikan (Read/Write) data ke views. Views akan menyimpan data tersebut dalam sebuah variabel context, yaitu sebuah variabel dengan tipe data dictionary. Di context, kita memiliki sejumlah data yang dibutuhkan oleh templates yang tepat (file html yang sesuai) untuk menampilkan file html di komputer client.
+Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan dengan baik. Tanpa adanya pengiriman data berupa HTML, maka browser milik client tidak dapat memuat informasi dan seluruh komponen dari website milik kita ke local network mereka.
 
 
-# Alasan Mengapa *Virtual Environment* Sangat Berguna untuk Proyek Django
-> **Mengapa harus menggunakan *virtual environment* ?**
-1. Virtual environment digunakan untuk mengatur python packages untuk beberapa proyek sekaligus. Dengan menggunakan *virtual* *environment*, python packages tidak diinstall secara global sehingga proyek dapat berjalan lancar karena *python* *packages* diinstal secara terpisah di masing-masing proyek itu sendiri.
-2. Dengan virtual environment, kita dapat mengetahui *packages* apa saja yang kita install di proyek kita. Kita bisa melihat jumlahnya ataupun versi dari masing-masing packages.
-3. Proyek Django dapat disesuaikan dengan memilih *library* atau *module* dengan versi yang mendukung.Dengan demikian, proyek Django dapat berjalan tanpa ada issues atau bug yang disebabkan oleh *library* dan/atau *module* tertentu.
-4. Proyek Django tidak perlu disesuaikan atau di-*update* secara berkala, jika packages memiliki versi yang baru. Developer bisa memilih package mana yang stabil dan cocok untuk proyeknya. Developer dapat memilih packages dengan versi tertentu secara pasti  di konfigurasi projek Django itu sendiri. Konfigurasi *python* *packages* biasanya tercatat pada file requirements.txt. Dengan demikian, developer tidak melakukan update program ketika ada pembaruan *module* dan/atau *library* tertentu. 
-   
-> **Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan *virtual* *environment*?**
-
-**TIDAK**. 
-
-**Alasan pertama**, Python tidak baik dalam menangani manajemen *dependencies*. Jika kita tidak spesifik melakukan instalasi *python* *packages*, maka pip akan menempatkan semua external packages dalam suatu folder, yaitu site-package/. Hal ini menyebabkan beberapa masalah jika Anda memiliki banyak proyek dengan konfigurasi yang berbeda. Bisa saja, satu proyek dapat berjalan, sedangkan proyek yang lain tidak berjalan.
- 
-**Alasan kedua**, jika kita ingin membuat aplikasi web berbasis Django, kita pasti ingin website tersebut dapat diakses oleh orang secara global untuk itu kita men-deploy aplikasi kita ke *cloud application platfor*m, seperti Heroku dan lainnya. Untuk membuat aplikasi web berbasis Django berjalan dengan lancar, kita perlu menginstal sejumlah module, library, atau python packages yang lain. Jika kita tidak menggunakan virtual environment, python packages tersebut tidak dikenali oleh cloud application platform. Bisa saja, web kita gagal di-deploy karena tidak memenuhi requirements cloud application platform tersebut. Hal ini dikarenakan server cloud application platform menginstal semua paket yang diperlukan – lagi – di mesin deployment tersebut. Misal, heroku memerlukan packages gunicorn terinstal pada proyek kita Lalu, bagaimana kita memastikan packages tersebut diinstall secara cloud di platform heroku? Cara satu-satunya adalah membuat virtual environment. Virtual environment memungkinkan python packages kita bisa diinstall di platform manapun secara otomatis dan global. Jadi, tidak mungkin rasanya tidak membuat django project tanpa menggunakan virtual environment.
-
-# Penjelasan terkait Pengerjaan tugas
+<br></br>
+# **Penjelasan terkait Pengerjaan tugas**
 
 
-## Langkah-langkah persiapan
-1. Membuat repository baru dengan template yang sudah disediakan oleh Asisten Dosen PBP.
-2. Membuat local directory untuk menyimpan semua file Anda secara lokal.
-3. Melakukan clone repository di local computer dengan perintah: 
-   ```shell
-   git clone <link-github-repository>
-   ```
-4.  Membuat virtual environment python dengan perintah:  
-      ```shell
-      python -m venv env
-      ```
-5.   Lalu, aktifkan virtual environment dengan mengetik perintah berikut.
+## Konfigurasi Django App Baru "mywatchlist"
+1. Membuka directory atau file dimana django-project berada
+2.  Lalu, aktifkan virtual environment dengan mengetik perintah berikut.
       ```shell
       Windows:
       env\Scripts\activate.bat
@@ -171,211 +68,303 @@ Ketika URLConf atau urls.py berhasil memukan fungsi views yang cocok. Views akan
       source env/bin/activate
       ```
 
-6. Meng-install dependencies yang diperlukan untuk menjalankan proyek Django dengan perintah ```pip install -r requirements.txt```.
-7. Melakukan pengetesan apakah proyek Django sudah bisa dijalankan di local computer atau belum dengan perintah: ```python manage.py runserver```.
-
-## Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
-1. Membuat Django app baru dengan perintah ```python manage.py startapp katalog```
-2. Daftarkan aplikasi katalog pada proyek django dengan menambahkan “katalog” ke INSTALLED_APPS yang terdapat pada settings.py folder proyek Django.
-3. Membuat konfigurasi *class-based models* di models.py pada folder katalog.
-4. Melakukan perintah: ```python manage.py makemigrations``` untuk mempersiapkan migrasi skema model yang sudah dibuat ke dalam database Django lokal.
-5. Lalu, menjalankan perintah: ```python manage.py migrate``` untuk menerapkan skema model  yang telah dibuat ke dalam database Django lokal.
-6. Membuat folder baru bernama fixtures dan buatlah file ```initial_catalog_data.json```.
-7. Jalankan perintah: ```python manage.py loaddata initial_catalog_data.json``` untuk memasukkan data tersebut ke dalam database Django lokal.
-8. Menjalankan perintah: ```python manage.py loaddata initial_catalog_data.json``` untuk memasukkan data tersebut ke dalam database Django lokal.
-9. Sekarang, kita akan masuk ke tahap implementasi views.
-10. Di folder katalog, saya membuat folder baru bernama “templates”. Di folder templates, saya membuat file katalog.html yang berisikan kode HTML berikut ini.
-   
-      ```html
-      {% block content %}
-      
-      <h1>Lab 1 Assignment PBP/PBD</h1>
-      
-      <h5>Name: </h5>
-      <p>Fill me!</p>
-      
-      <h5>Student ID: </h5>
-      <p>Fill me!</p>
-      
-      <table>
-         <tr>
-            <th>Item Name</th>
-            <th>Item Price</th>
-            <th>Item Stock</th>
-            <th>Rating</th>
-            <th>Description</th>
-            <th>Item URL</th>
-         </tr>
-         {% comment %} Add the data below this line {% endcomment %}
-      </table>
-      
-      {% endblock content %}
-      ```
-11. Membuat sebuah fungsi yang menerima parameter request dan mengembalikan render(request, "katalog.html") di views.py yang ada pada folder katalog. Contohnya adalah sebagai berikut.
-    ```shell
-    def show_katalog(request):
-         return render(request, "katalog.html")
-      ```
-12. Kita akan lanjut ke tahap persiapan transfer data dari model ke views.
-    
-## Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
-1. Pada fungsi views yang telah dibuat sebelumnya, import models yang sudah dibuat sebelumnya ke dalam file views.py. Class tersebut akan digunakan untuk  melakukan pengambilan data dari database. Berikut adalah kodenya.
-   ```shell
-   from django.shortcuts import render
-   from catalog.models import CatalogItem
-   ...
+3. Lalu, membuat sebuah django-app dengan nama "mywatchlist" dengan perintah berikut ```python manage.py startapp mywatchlist```
+4. Tambahkan apliasi "mywatchlist" pada variabel INSTALLED_APPS di settings.py folder django-project. Langkah ini digunakan untuk mendaftarkan aplikasi mywatchlist agar dapat di baca oleh django.
+      ```shell
+      INSTALLED_APPS = [
+         'events.apps.EventsConfig',
+         'Django.contrib.admin',
+         # tambahkan aplikasi disini
+         'mywatchlist,'
+      ]
    ```
-2. Menambahkan potongan kode di bawah ini ke dalam fungsi show_catalog. Potongan kode ini berfungsi untuk meminta queryset  ke model database dan menyimpan hasil query tersebut ke dalam sebuah variabel. Berikut adalah kodenya.
-   ```shell
-   ...
-   data_catalog = CatalogItem.objects.all()
-    context = {
-        'list_barang':data_catalog,
-        'nama': 'Gabriel Zebaoth Krisopras Putra',
-        'student_id' : '2106751480',
-    }
-   ...
+<br></br>
+## Membuat model "Watchlist" dan file "mywatchlist_data.JSON" 
+1. Buka kembali directory django-app mywatchlist.
+2. Kita akan membuat model watchlist dengan atribuat sebagai berikut.
+   -  watched : BooleanField
+   -  title : CharField, dengan maksimal character = 100
+   -  rating : IntegerField
+   -  release_date : CharField, dengan maksimal character = 100
+   -  review : TextField
+   Maka, models.py di mywatchlist menjadi seperti ini
+   ```python
+   from django.db import models
+   from django.core.validators import MaxValueValidator, MinValueValidator 
+
+   # Create your models here.
+   class WatchList(models.Model):
+      watched = models.BooleanField()
+      title = models.CharField(max_length=100)
+      rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+      release_date = models.CharField(max_length=100)
+      review =  models.TextField()
    ```
-3. Menambahkan context sebagai parameter ketiga pada pengembalian fungsi render di fungsi show_catalog. Data yang ada pada variabel context tersebut akan ikut di-render oleh Django sehingga nantinya data tersebut muncul pada halaman HTML.
+3. Langkah selanjutnya adalah melakukan migrasi data dari models kita agar attribute model kita tersimpan di django database. Untuk melakukan hal tersebut, kita perlu menjalankan perintah berikut.
    ```shell
-   ...
-   return render(request, "catalog.html", context)
+   python manage.py makemigrations
+   python manage.py migrate
    ```
-4. Sekarang, kita sudah membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML. Selanjutnya, kita akan membuat sebuah routing untuk memetakan fungsi yang telah dibuat pada views.py.
-
-## Membuat sebuah routing untuk memetakan fungsi yang telah kamu buat pada views.py.
-1. Membuka kembali folder katalog.
-
-2. Membuat urls.py untuk melakukan routing terhadap fungsi views yang telah dibuat sehingga nantinya halaman HTML dapat ditampilkan lewat browser. Isi dari urls.py tersebut adalah sebagai berikut.
-   ```shell
-   from django.urls import path
-   from katalog.views import show_katalog
-
-   app_name = 'katalog'
-
-   urlpatterns = [
-      path('', show_katalog, name='show_katalog'),
+4. Selanjutnya, kita akan membuat sebuah data sesuai dengan atribut pada model WatchList dan akan disimpan ke database django local. 
+5. Selanjutnya, Buat folder ```fixtures``` di folder ```mywatchlist```. 
+6. Lalu, Buat sebuah file ```mywatchlist_data.json``` di folder ```fixtures``` tersebut. Isi file tersebut dengan 10 data sebagai berikut.
+   ```json
+      [
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 1,
+         "fields": {
+               "watched": true,
+               "title": "Spiderman: No Way Home",
+               "rating": 4,
+               "release_date": "13 Juni 2021",
+               "review": "Filmnya bagus, ada aksi dan ada lawaknya"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 2,
+         "fields": {
+               "watched": false,
+               "title": "One Piece Film: Red",
+               "rating": 4,
+               "release_date": "13 September 2022",
+               "review": "Untuk pertama kalinya, Uta - penyanyai paling dicintai akan mengungkapkan dirnya kepada dunia di konser langsungnya."
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 3,
+         "fields": {
+               "watched": false,
+               "title": "Miracle In Cell No 7",
+               "rating": 5,
+               "release_date": "20 Agustus 2022",
+               "review": "Filmnya sedih bangettt :("
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 4,
+         "fields": {
+               "watched": true,
+               "title": "Pengabdi Setan 2",
+               "rating": 5,
+               "release_date": "23 Juli 2022",
+               "review": "Filmya susah ditebak dan menegangkan"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 5,
+         "fields": {
+               "watched": true,
+               "title": "Doctor Strange 2",
+               "rating": 5,
+               "release_date": "3 Mei 2022",
+               "review": "Harus ngerti dulu serial marvel sebelumnya biar paham film ini."
+         }
+      },    {
+         "model": "mywatchlist.WatchList",
+         "pk": 6,
+         "fields": {
+               "watched": true,
+               "title": "KKN di Desa Penari",
+               "rating": 3,
+               "release_date": "24 April 2022",
+               "review": "Banyak Jumpscare 0_o"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 7,
+         "fields": {
+               "watched": true,
+               "title": "Teka Teki Tika",
+               "rating": 4,
+               "release_date": "14 April 2021",
+               "review": "Tidak sesuai ekspektasi"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 8,
+         "fields": {
+               "watched": true,
+               "title": "Avanger",
+               "rating": 5,
+               "release_date": "20 Agustus 2020",
+               "review": "Mantap Bet"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 9,
+         "fields": {
+               "watched": true,
+               "title": "Iron Man",
+               "rating": 4,
+               "release_date": "20 Agustus 2018",
+               "review": "Mantap boss Bagus Banget Loh"
+         }
+      },
+      {
+         "model": "mywatchlist.WatchList",
+         "pk": 10,
+         "fields": {
+               "watched": true,
+               "title": "Spiderman",
+               "rating": 3,
+               "release_date": "20 Agustus 2018",
+               "review": "Aksinya mantap bet"
+         }
+      }
    ]
    ```
-3. Daftarkan juga aplikasi katalog ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut pada variabel urlpatterns.
-   ```shell
-   ...
-   path('katalog/', include('katalog.urls')),
-   ...
-   ```
-4. Jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/wishlist/ di browser untuk melihat halaman yang sudah dibuat.
+7.  Untuk membuat data tersebut tersimpan dalam database lokal. Jalankan perintah berikut ```python manage.py loaddata mywatchlist_data.json```.
+8. Sekarang, kita sudah mengkonfigurasi bagian database atau models dari proyek django kita.
 
-## Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template.
-1. Sekarang, kita akan melakukan mapping terhadap data yang telah ikut di-render pada fungsi views untuk dapat memunculkannya di halaman HTML. Untuk melakukan mapping tersebut, kita perlu menambahkan  variabel dan tag sesuai dengan dokumentasi django.
-2. Kita akan coba mengubah bagian dari file html di folder templates.
-   -  <h5>Name: </h5> ubah "Fill me!" menjadi {{nama}}
-   -  <h5>Student ID: </h5> ubah "Fill me! menjadi {{student_id}}. 
-   Hal ini dilakukan agar parameter nama dan student_id yang ada di variabel context pada views.py dapat dirender dalam template html. 
-3. Untuk menampilkan daftar barang ke dalam tabel, kita perlu melakukan iterasi terhadap variabel list_barang yang telah di-*render* ke dalam HTML. Perhatikan bahwa itu  tidak dapat memanggil daftar barang di katalog  tersebut secara langsung sebab variabel list_barang merupakan sebuah kontainer yang berisikan objek. Kita  perlu memanggil nama variabel/atribut spesifik dari objek yang ada dalam kontainer tersebut untuk memanggil data dari objek tersebut. Contohnya adalah sebagai berikut.
-   ```shell
+<br></br>
+## Konfigurasi Views yang memetakan data dari models ke template HTML
+1.  Pertama, kita akan membuka file ```views.py`` di folder ```mywatchlist```.
+2.  Sebelumnya, kita perlu melakukan ```import``` modul-modul yang kita butuhkan.
+   ```python
+      # Tambahkan pada baris pertama views.py
+      from django.shortcuts import render
+      from django.http import HttpResponse
+      from django.core import serializers
+      from mywatchlist.models import WatchList
+   ```
+3. Untuk menampilkan data berupa HTML, kita akan membauat sebuah fungsi ```show_my_watch_list```. Adapun isi dari fungsi show_my_watch_list adalah sebagai berikut.
+   ```python
+   def show_my_watch_list(request):
+      # Kita akan mngambil data dari models dan simpan ke watch_list_data
+      watch_list_data = WatchList.objects.all()
+      # BONUS: kita akan menghitung total data atau film yang sudah ditonton dan yang belum ditonton.
+
+      # Untuk film yang ditonton kita ingin menghitung data dengan atribut watched bernilai True
+      count_watched_film = WatchList.objects.filter(watched=True).count()
+      # Berlaku sebaliknya pada unwatched film
+      count_unwatched_film = WatchList.objects.filter(watched=False).count()
+
+      # Variabel berikut bertipe boolean untuk mengecek apakah jumlah film yang ditonton lebih besar dari jumlah film yang belum ditonton atau tidak
+      is_watched_greater_than_unwatched = count_watched_film > count_unwatched_film
+
+      # Dictionary context memuat semua data yang akan dibutuhkan pada template html. Semua data dari database yang digunakan akan disimpan disini
+      context = {
+         'boolean_check': is_watched_greater_than_unwatched,
+         'watch_list': watch_list_data,
+         'nama': 'Gabriel Zebaoth Krisopras Putra',
+         'student_id' : '2106751480',
+      }
+
+      return render(request, "my_watch_list.html", context)
+   ```
+4.  Selanjutnya, kita akan membuat sebuah fungsi yang akan mengembalikan file JSON dari database.
+   ```python
+      def show_json(request):
+         data = WatchList.objects.all()
+         return HttpResponse(serializers.serialize("json", data), content_type="application/json") 
+
+      def show_json_by_id(request, id):
+         data = WatchList.objects.filter(pk=id)
+         return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+   ```
+5.  Selanjutnya, kita akan membuat sebuah fungsi yang akan mengembalikan file XML dari database.
+      ```python
+      def show_xml(request):
+         data = WatchList.objects.all()
+         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+      def show_xml_by_id(request, id):
+         data = WatchList.objects.filter(pk=id)
+         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+      ```
+
+## Membuat sebuah file HTML my_watch_list.html pada templates
+1. Pertama, kita akan membuat folder template di dalam folder mywatchlist.
+2. Selanjutnya, buatlah file my_watch_list.html.
+3. Dalam file HTML tersebut, salin dan tempel code berikut.
+   ```html
+   {% extends 'base.html' %}
+
+   {% block content %}
+
+   <h1>Lab 2 Assignment PBP/PBD</h1>
+   
+   <h5>Name: </h5>
+   <p>{{nama}}</p>
+
+   <h5>Student ID: </h5>
+   <p>{{student_id}}</p>
+
+   <!-- Key boolean_check dari context digunakan pada if else ini -->
+   {% if boolean_check %}
+      <h1>Selamat, kamu sudah banyak menonton!</h1>
+   {% else %}
+      <h1>Wah, kamu masih sedikit menonton!</h1>
+   {% endif %}
+   <table>
+      <tr>
+         <th>Watched</th>
+         <th>Title</th>
+         <th>Rating</th>
+         <th>Release Date</th>
+         <th>Review</th>
+      </tr>
+      {% comment %} Add the data below this line {% endcomment %}
+      {% for movie in watch_list %}
+         <tr>
+               <th>{{movie.watched}}</th>
+               <th>{{movie.title}}</th>
+               <th>{{movie.rating}}</th>
+               <th>{{movie.release_date}}</th>
+               <th>{{movie.review}}</th>
+         </tr>
+      {% endfor %}
+   </table>
+   {% endblock content %}
+   ```
+
+
+## Membuat sebuah routing untuk memetakan fungsi yang telah  dibuat pada views.py.
+1. Membuka kembali folder mywatchlist.
+
+2. Membuat urls.py untuk melakukan routing terhadap fungsi views yang telah dibuat sehingga nantinya halaman HTML dapat ditampilkan lewat browser. 
+3. Pertama, kita aka mealkukan import fungsi views. Tambahkan kode berikut pada baris kedua urls.py
+   ```python
+   from mywatchlist.views import show_my_watch_list, show_json, show_json_by_id, show_xml, show_xml_by_id
+   ```
+4. Selanjutnya, kita menambahkan pat baru sesuai fungsi views masing-masing. Tambahkan kode berikut pada urls.py.
+    ```python
+   urlpatterns = [
+      path('', show_my_watch_list, name='show_my_watch_list'),
+      path('xml/', show_xml, name='show_xml'),
+      path('json/', show_json, name='show_json'),
+      path('json/<int:id>', show_json_by_id, name='show_json_by_id'),
+      path('xml/<int:id>', show_xml_by_id, name='show_xml_by_id'),
+   ]
+    ```
+5. Daftarkan juga aplikasi mywatchlist ke dalam urls.py yang ada pada folder ```project_django``` dengan menambahkan potongan kode berikut pada variabel urlpatterns.
+   ```python
    ...
-   {% for item in list_barang%}
-        <tr>
-            <th>{{item.item_name}}</th>
-            <th>{{item.item_price}}</th>
-            <th>{{item.item_stock}}</th>
-            <th>{{item.description}}</th>
-            <th>{{item.rating}}</th>
-            <th>{{item.item_url}}</th>
-        </tr>
-   {% endfor %}
+   path('mywatchlist/', include('mywatchlist.urls')),
    ...
    ```
-4. Sekarang, kita telah berhasil memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template. Langkah selanjutnya, kita akan melakukan *deployment* project Django ke Heroku.
-   
+6. Jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/mywatchlist/ di browser untuk melihat halaman yang sudah dibuat.
+<br></br>
+
 ## Melakukan deployment ke Heroku 
-1. Coba jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/katalog/ di browser favoritmu untuk melihat halaman yang sudah kamu buat.
-2. Cek apakah http://localhost:8000/katalog/ dapat memuat template katalog.html dengan baik. Cek juga apakah data dari model dapat dirender oleh views  ke katalog.html.
+1. Coba jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/mywatchlist/ di browser favoritmu untuk melihat halaman yang sudah kamu buat.
+2. Cek apakah http://localhost:8000/mywatchlist/ dapat memuat template katalog.html dengan baik. Cek juga apakah data dari model dapat dirender oleh views  ke katalog.html.
 3. Jika sudah benar, lakukanlah tahapan ```git add, commit, and push``` terhadap changes yang kamu lakukan.
 4. Selanjutnya, folder atau repository proyek Django di akun github akan di deploy ke Heroku. Namun, ada beberapa hal yang harus diperhatikan.
 5. Log-in ke halaman web Heroku.
-6. Masuk ke dashboard Heroku dan membuat sebuah aplikasi Heroku. Pilih tombol **new > create new app**
-7. Lalu, masukkan nama aplikasi sesuai keinginan Anda. Klik Create App.
-8. Membuat sebuah file .txt di notepad laptop kesayangan Anda. Selanjutnya, copy dan paste tulisan berikut.
-   - HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>
-   - HEROKU_API_KEY: <VALUE_API_KEY_AKUN_HEROKU>
-9. Menulis nama aplikasi yang telah dibuat di samping text berikut ini HEROKU_APP_NAME.
-10. Menyalin kode Heroku API key yang didapat di bagian **Account settings > API key**  di kanan HEROKU_API_KEY.
-11. Membuka konfigurasi repositori GitHub Anda bagian Secrets untuk GitHub Actions (Settings -> Secrets -> Actions).
-12. Menambahkan variabel repository secret baru untuk melakukan deployment. “HEROKU_XXXX” sebagai name dan “xxx-xxx” sebagai value. Contoh:
-      ```shell
-      (NAME)HEROKU_APP_NAME
-      (VALUE)APLIKASI-AKU
-      ```
-13. Menyimpan variabel-variabel tersebut.
-14.  Membuat sebuah file bernama procfile. File ini akan digunakan oleh Heroku untuk membaca log aplikasi ke sistem monitoring internal Heroku. Berkas tersebut diisi dengan text berikut.
-      ```
-      web: gunicorn project_django.wsgi --log-file -
-      ```
-15.  Membuat berkas baru dpl.yml di .github/workflows. Berkas ini digunakan untuk mengeksekusi deployment oleh runner dari Github Actions. Adapun isi berkas dpl.yml adalah sebagai berikut.
-      ```shell
-      name: Deploy
-
-      on:
-         push:
-            branches-ignore:
-               - template
-         pull_request:
-            branches-ignore:
-               - template
-
-      jobs:
-         Deployment:
-            runs-on: ubuntu-latest
-            env:
-               HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-               HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-            steps:
-            - uses: actions/checkout@v2
-            - name: Set up Ruby 2.7
-               uses: actions/setup-ruby@v1
-               with:
-               ruby-version: 2.7
-            - name: Install dpl
-               run: gem install dpl
-            - name: Install Heroku CLI
-               run: wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-            - name: Deploy to Heroku
-               run: dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
-            - name: Run migrations on Heroku
-               run: heroku run --app $HEROKU_APP_NAME migrate
-            - uses: chrnorm/deployment-action@releases/v1
-               name: Create GitHub deployment
-               with:
-               initial_status: success
-               token: ${{ github.token }}
-               target_url: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com
-               environment: production
-
-      ```
-    
-16.  Untuk memberitahu git berkas atau direktori yang tidak dipush ke repositori daring di github. Adapun isi dari berkas ini dapat di peroleh dari website [ini](https://Djangowaves.com/tips-tricks/gitignore-for-a-Django-project/).
-17.  Mengatur dan menambhakan konfigurasi berikut pada file settings.py di proyek Django:
-      ```shell
-      # Menambahkan STATIC_ROOT
-         import os
-         PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-         STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-      # Mengatur ALLOWED_HOSTS
-         ALLOWED_HOSTS = [“*”]
-      # Menambahkan middleware baru pada variabel MIDDLEWARE
-         MIDDLEWARE = [
-            ...,
-            'whitenoise.middleware.WhiteNoiseMiddleware',
-         ]
-       ```
-18.  Lakukan ```git add, commit, dan push``` perubahan di local computer ke repository github .
-19.  Buka link aplikasi yang telah dibuat di Heroku.
-20.  Connect akun github dengan aplikasi Heroku. Klik **“connect to github”.**
-21.  Langkah selanjutnya, kita akan memilih nama repository di github yang akan di-deploy ke aplikasi Heroku.
-22.  Di bagian bawah terdapat *manual deploy*. Lalu, ketikkan nama repository github.
-23.  Tunggu proses deployment telah selesai.
-24.  Akhirnya! proyek Django sudah ter-*deploy* dengan baik di Heroku.
+6. Buka aplikasi yang digunakan untuk deployment repo tugas pbp ini.
+7.   Kita akan melakukan deployment ulang denagn melakukan manual deployment.
+8.   Tunggu proses deployment telah selesai.
+9.   Untuk memastikan data di file json tertampilkan di website heroku. Jalankan perintah berikut ```python manage.py loaddata mywatchlist_data.json``` pada heroku console.
+10.  Akhirnya! proyek Django sudah ter-*deploy* dengan baik di Heroku.
 
 ## Credits
 Tugas ini dibuat dengan menggunakan template [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage).
