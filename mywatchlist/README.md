@@ -52,6 +52,14 @@ Dalam mengimplementasikan sebuah platform,  kita sebagai developer pasti ingin m
 
 Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan dengan baik. Tanpa adanya pengiriman data berupa HTML, maka browser milik client tidak dapat memuat informasi dan seluruh komponen dari website milik kita ke local network mereka.
 
+<br></br>
+# **Screenshots dari Postman**
+## Test HTML URLs
+![html](images/html.png)
+## Test JSON URLs
+![json](images/json.png)
+## Test XML URLs
+![xml](images/xml.png)
 
 <br></br>
 # **Penjelasan terkait Pengerjaan tugas**
@@ -291,7 +299,10 @@ Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan den
    {% block content %}
 
    <h1>Lab 2 Assignment PBP/PBD</h1>
-   
+   <h3>Get data from here:</h3>
+   <a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/xml">Get XML Data</a> <br>
+   <a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/json">Get JSON Data</a>
+
    <h5>Name: </h5>
    <p>{{nama}}</p>
 
@@ -353,7 +364,33 @@ Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan den
    ```
 6. Jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/mywatchlist/ di browser untuk melihat halaman yang sudah dibuat.
 <br></br>
+## Membuat testing untuk mengecek apakah url respon HTTP 200 OK
+1. Buka folder mywatchlist. Lalu, buka file test.py
+2. Salin dan paste kode berikut.
+   ```python
+   from django.test import SimpleTestCase
+   from django.urls import reverse, resolve
+   from mywatchlist.views import show_my_watch_list, show_xml, show_json
 
+
+   class Test_Data_Delivery_URLs(SimpleTestCase):
+      def test_data_delivery_HTML(self):
+         url = reverse('mywatchlist:show_my_watch_list')
+         print(resolve(url))
+         self.assertEqual(resolve(url).func, show_my_watch_list)
+      def test_data_delivery_JSON(self):
+         url = reverse('mywatchlist:show_json')
+         print(resolve(url))
+         self.assertEqual(resolve(url).func, show_json)
+      def test_data_delivery_XML(self):
+         url = reverse('mywatchlist:show_xml')
+         print(resolve(url))
+         self.assertEqual(resolve(url).func, show_xml)
+
+   ```
+3. Misal, muncul output diterminal : ```Ran 4 tests in 0.005s```. Tandanya testnya berhasil
+
+<br></br>
 ## Melakukan deployment ke Heroku 
 1. Coba jalankan proyek Django dengan perintah python manage.py runserver dan bukalah http://localhost:8000/mywatchlist/ di browser favoritmu untuk melihat halaman yang sudah kamu buat.
 2. Cek apakah http://localhost:8000/mywatchlist/ dapat memuat template katalog.html dengan baik. Cek juga apakah data dari model dapat dirender oleh views  ke katalog.html.
