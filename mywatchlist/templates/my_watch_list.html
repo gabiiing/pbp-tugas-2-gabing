@@ -3,13 +3,20 @@
  {% block content %}
 
   <h1>Lab 2 Assignment PBP/PBD</h1>
+  <h3>Get data from here:</h3>
+  <a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/xml">Get XML Data</a> <br>
+  <a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/json">Get JSON Data</a>
 
   <h5>Name: </h5>
   <p>{{nama}}</p>
 
   <h5>Student ID: </h5>
   <p>{{student_id}}</p>
-
+  {% if boolean_check %}
+    <h1>Selamat, kamu sudah banyak menonton!</h1>
+  {% else %}
+    <h1>Wah, kamu masih sedikit menonton!</h1>
+  {% endif %}
   <table>
     <tr>
       <th>Watched</th>
