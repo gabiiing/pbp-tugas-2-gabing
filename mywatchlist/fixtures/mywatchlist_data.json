@@ -6,7 +6,7 @@
             "watched": true,
             "title": "Spiderman: No Way Home",
             "rating": 4,
-            "release_date": "13 Juni 2021",
+            "release_date": "2021-06-13",
             "review": "Filmnya bagus, ada aksi dan ada lawaknya"
         }
     },
@@ -17,7 +17,7 @@
             "watched": false,
             "title": "One Piece Film: Red",
             "rating": 4,
-            "release_date": "13 September 2022",
+            "release_date": "2022-09-13",
             "review": "Untuk pertama kalinya, Uta - penyanyai paling dicintai akan mengungkapkan dirnya kepada dunia di konser langsungnya."
         }
     },
@@ -28,7 +28,7 @@
             "watched": false,
             "title": "Miracle In Cell No 7",
             "rating": 5,
-            "release_date": "20 Agustus 2022",
+            "release_date": "2022-08-20",
             "review": "Filmnya sedih bangettt :("
         }
     },
@@ -39,7 +39,7 @@
             "watched": true,
             "title": "Pengabdi Setan 2",
             "rating": 5,
-            "release_date": "23 Juli 2022",
+            "release_date": "2022-07-23",
             "review": "Filmya susah ditebak dan menegangkan"
         }
     },
@@ -50,7 +50,7 @@
             "watched": true,
             "title": "Doctor Strange 2",
             "rating": 5,
-            "release_date": "3 Mei 2022",
+            "release_date": "2022-05-03",
             "review": "Harus ngerti dulu serial marvel sebelumnya biar paham film ini."
         }
     },    {
@@ -60,7 +60,7 @@
             "watched": true,
             "title": "KKN di Desa Penari",
             "rating": 3,
-            "release_date": "24 April 2022",
+            "release_date": "2022-04-22",
             "review": "Banyak Jumpscare 0_o"
         }
     },
@@ -71,7 +71,7 @@
             "watched": true,
             "title": "Teka Teki Tika",
             "rating": 4,
-            "release_date": "14 April 2021",
+            "release_date": "2021-04-21",
             "review": "Tidak sesuai ekspektasi"
         }
     },
@@ -81,8 +81,8 @@
         "fields": {
             "watched": true,
             "title": "Avanger",
-            "rating": 5,
-            "release_date": "20 Agustus 2020",
+            "rating": 4,
+            "release_date": "2020-08-20",
             "review": "Mantap Bet"
         }
     },
@@ -93,7 +93,7 @@
             "watched": true,
             "title": "Iron Man",
             "rating": 4,
-            "release_date": "20 Agustus 2018",
+            "release_date": "2018-08-20",
             "review": "Mantap boss Bagus Banget Loh"
         }
     },
@@ -104,7 +104,7 @@
             "watched": true,
             "title": "Spiderman",
             "rating": 3,
-            "release_date": "20 Agustus 2018",
+            "release_date": "2018-08-20",
             "review": "Aksinya mantap bet"
         }
     }
