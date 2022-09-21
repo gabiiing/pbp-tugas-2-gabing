@@ -7,7 +7,7 @@ def show_my_watch_list(request):
     watch_list_data = WatchList.objects.all()
     count_watched_film = WatchList.objects.filter(watched=True).count()
     count_unwatched_film = WatchList.objects.filter(watched=False).count()
-    is_watched_greater_than_unwatched = count_watched_film > count_unwatched_film
+    is_watched_greater_than_unwatched = count_watched_film >= count_unwatched_film
     context = {
         'boolean_check': is_watched_greater_than_unwatched,
         'watch_list': watch_list_data,
