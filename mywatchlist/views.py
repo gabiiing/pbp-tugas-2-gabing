@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
 from mywatchlist.models import WatchList
+def show_home(request):
+    return render(request, "mywatchlist_home.html")
 
-def show_my_watch_list(request):
+def show_html(request):
     watch_list_data = WatchList.objects.all()
     count_watched_film = WatchList.objects.filter(watched=True).count()
     count_unwatched_film = WatchList.objects.filter(watched=False).count()
