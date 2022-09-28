@@ -15,7 +15,8 @@ from todolist.models import Task
 def show_todolist(request):
     task_list = Task.objects.filter(user = request.user)
     context = {
-        'task_list': task_list
+        'task_list': task_list,
+        'last_login': request.COOKIES['last_login']
     }
     return render(request, 'todolist.html', context)
 
