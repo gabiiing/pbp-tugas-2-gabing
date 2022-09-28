@@ -9,6 +9,7 @@
   <h1>This is a homepage</h1>
   <h3>Terima kasih telah mengunjungi website ini.</h3>
   <h3>Anda dapat mengunjungi url berikut untuk melihat hasil tugas saya:</h3>
-  <h3><a href="https://gabing-pbp-tugas2.herokuapp.com/katalog/">katalog</a></h3>
-  <h3><a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/">mywatchlist</a></h3>
+  <h3><a href="{% url 'katalog:show_katalog' %}">katalog</a></h3>
+  <h3><a href="{% url 'mywatchlist:show_home' %}"g>mywatchlist</a></h3>
+  <h3><a href="{% url 'todolist:show_todolist' %}"g>todolist</a></h3>
 {% endblock content %}
