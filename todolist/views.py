@@ -1,5 +1,3 @@
-from multiprocessing import context
-from shutil import register_unpack_format
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -15,16 +13,9 @@ from todolist.models import Task
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    task_list = Task.objects.all()
-    user_todo_list = []
-    current_user = request.user
-    for task in task_list:
-        if task.user == current_user:
-            user_todo_list.append(task)
+    task_list = Task.objects.filter(user = request.user)
     context = {
-        'task_list': user_todo_list,
-        'name': 'Gabriel Zebaoth Krisopras Putra',
-        'student_id' : '2106751480',
+        'task_list': task_list,
         'last_login': request.COOKIES['last_login']
     }
     return render(request, 'todolist.html', context)
@@ -76,3 +67,39 @@ def create_task(request):
         form = CreateTask(initial={'user': request.user})
     context = {'form': form}
     return render(request, 'create_task.html', context)
+
+@login_required(login_url='/todolist/login/')
+# Fungsi untuk memperbarui status task
+def update_task(request, pk):
+    updated_task = Task.objects.get(id=pk)
+
+    if updated_task.is_finished:
+        updated_task.is_finished = False
+    else:
+        updated_task.is_finished = True
+    
+    updated_task.save() 
+    return redirect("todolist:show_todolist")
+
+@login_required(login_url='/todolist/login/')
+# Fungsi untuk memperbarui status task
+def delete_task(request, pk):
+    delete_task = Task.objects.get(id=pk)
+    delete_task.delete() 
+    return redirect("todolist:show_todolist")
+
+@login_required(login_url='/todolist/login/')
+# Fungsi untuk memperbarui status task
+def edit_task(request, pk):
+    task = Task.objects.get(id=pk)
+    form = CreateTask(instance=task)
+    if request.method == 'POST':
+        form = CreateTask(request.POST, instance=task)
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.user = request.user
+            task.save()
+            return redirect('todolist:show_todolist')
+    context = {'form': form}
+    return render(request, 'create_task.html', context)
+        

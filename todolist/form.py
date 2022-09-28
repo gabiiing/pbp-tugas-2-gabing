@@ -1,8 +1,7 @@
-from dataclasses import field
-from django.forms import ModelForm, HiddenInput
+from django.forms import ModelForm
 from todolist.models import Task
 
 class CreateTask(ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description', ]
+        fields = ['title', 'description' ]
