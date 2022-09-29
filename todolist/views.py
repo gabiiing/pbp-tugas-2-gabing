@@ -13,7 +13,7 @@ from todolist.models import Task
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    task_list = Task.objects.filter(user = request.user)
+    task_list = Task.objects.filter(user = request.user).all()
     context = {
         'task_list': task_list
     }
