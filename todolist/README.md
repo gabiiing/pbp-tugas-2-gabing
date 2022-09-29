@@ -13,45 +13,30 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Berikut adalah link hasil pengerjaan tugas saya
 [Heroku Link](https://gabing-pbp-tugas2.herokuapp.com/todolist/).
 
-<br></br>
-# **Perbedaan JSON, XML, dan HTML**
-## **Apa itu JSON ?**
-**JSON** atau ***JavaScript Object Notation***, adalah sebuah format data berbasis teks dengan mengikuti sintaks seperti layaknya objek JavaScript. JSON diperkenalkan di awal tahun 2000 oleh Douglas Crockford. JSON digunakan sebagai alat untuk pertukaran data: memuat dan menampilkan informasi ke web secara responsif, menukarkan data dari website lain, dan menukarkan data antar platform dengan JSON API. JSON mempunyai syntax yang cukup sederhana. JSON menyimpan data dalam format map dengan pasangan key dan value. Key harus berupa String, sedangkan value dapat diisi dengan data primitif JavaScript apapun. JSON juga dapat diubah ke dalam bentuk string sehingga data yang sedang ditukar dapat dipahami dengan mudah. Format JSON adalah sebagai berikut.
+## Akun Dummy
+> username: ```gabiiing``` password: ```gabing.gaul```
+> 
+> username: ```gabing.gaul``` password: ```gabriel.zebaoth```
+# **Jawaban pertanyaan**
+### **Apa kegunaan {% csrf_token %} pada elemen ```<form>```?**
+```Cross-Site Request Forgery``` adalah sebuah serangan yang memanfaatkan user yang terautentikasi di sebuah website untuk mengirimkan permintaan ke server dengan maksud mencuri data. Jika penyerang berhasil mengakses akun superuser atau admin, maka database website tersebut tidak aman lagi alias tercuri.Django mempunyai cara untuk mengatasi serangan tersebut. Django memiliki {% csrf_token %}. Baris ini akan menghasilkan token di server-side saat merender halaman template dan selalu memastikan dengan memeriksa token dari permintaan yang masuk. Suatu request akan divalidasi, jika token dari request tersebut valid, maka request akan direspon.
 
-## **Apa itu XML?**
-**XML** atau ***Extensible Markup Language*** adalah sebuah format untuk membantu proses penyimpanan dan pentransferan data. Format XML hampir mirip dengan HTML. Keduanya sama-sama menggunakan tag untuk mengenali sebuah value dari data. Tetapi, XML memungkinkan developer untuk membuat tagnya sendiri, tidak seperti HTML yang sudah baku dan paten. Dengan format ini, developer dapat mengirimkan atau saling menukar data antar sistem atau platform melalui layanan internet.
+### **Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen ```<form>```?**
+Website kita akan rentan akan serangan CSRF. Padahal, jenis serangan ini adalah serangan yang sangat umum. Dengan demikian, penyerang akan sangat mudah mengintai dan mencuri informasi yang didatabase website kita. Jika dengan teknik CSRF penyerang memperoleh akses superuser aplikasi django kita, maka website kita akan pada kendali penyerang tersebut. Selain itu, request kita juga mungkin akan ditolak karena django hanya merespon request dengan token yang valid.
 
-## **Apa itu HTML?**
-**HTML** atau ***HyperText Markup Language*** adalah sebuah format yang digunakan untuk membuat website atau bisa dibilang HTML ini merupakan pondasi untuk memuat seluruh konten dari sebuah website. HTML biasanya disandingkan dengan CSS (Cascading Style Sheet) untuk “mempercantik” bagian-bagian web. Misalnya, kita bisa membuat tabel di website dengan menggunakan tag HTML dan kita bisa mengubah warna atau teks tabel tersebut dengan menggunakan CSS. HTML menggunakan “markup” untuk membubuhi keterangan teks, gambar dan konten lain untuk ditampilkan di browser Web.HTML menyediakan tag atau elemen khusus, seprti body, div, h1, h2, link, a, ul, th, tr, dan masih banyak lagi
+### **Apakah kita dapat membuat elemen```<form>``` secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Jelaskan secara gambaran besar bagaimana cara membuat ```<form>``` secara manual.**
+Selain kita menggunakan form.as_table / form.as_p / form.as_ul, kita ```bisa``` menggunakan tag ```<form></form>``` html dengan tambahan kode tertentu. Namun, kita perlu membuat file baru, yaitu forms.py. Forms ini akan kita gunakan untuk membuat custom form sesuai dengan field yang sudah kita buat pada model. Sesuadah membuat form, kita membuat sebuah file html berisi template html seperti biasa. Didalamnya kita buat tag ```<form>```. Isi attribute method dengan 'POST'. Jangan lupa untuk menambahkan {% csrf_token %}. Lalu, untuk membuat masing-masing fields yang akan diisi untuk membuat item dari model yang ada di django, kita hanya perlu membuat div. Didalam div,tambahkan label untuk memberikan judul disamping kolom field yang tersedia. Diluar label, tambahkan ```{{ form.(field_model) }}```. Field model tersebut dapat disesuaikan dengan attribute atau fields yang sudah dibuat pada models.py.
 
-## **Apa perbedaan dari JSON, XML, dan HTML?**
-### **Perbedaan HTML dengan JSON dan XML**
-HTML memiliki fungsi yang berbeda dengan JSON dan XML. HTML hanya digunakan untuk menampilkan data ke sebuah website. HTML tidak dapat digunakan untuk menyimpan dan mengirim data antar sistem, platform, atau website seperti JSON dan XML. HTML juga bersifat statis karena fungsinya sendiri hanya untuk menampilkan data. HTML tidak dapat diuraikan atau di-parsed  dan digunakan oleh kebanyakan bahasa pemrograman tidak seperti JSON dan XML. 
-
-### **Perbedaan JSON dan XML**
-Meskipun JSON dan XML terlihat memiliki fungsionalitas yang sama tersebut tetapi keduanya memiliki karakteristik yang unik. Berikut adalah perbandingan antara JSON dengan XML.
-| **Parameter**                     | **XML**                                                                         | **JSON**                                                                                             |
-|-----------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **Bahasa**                        | Sebuah markup dengan tag yang didefinisikan secara manual                       | Berupa formata dalam bentuk Objek JavaScript                                                         |
-| **Penyimpanan data**              | Data disimpan sebagai tree structure                                            | Data disimpan sebagai map: ada key dan value.                                                        |
-| **Pengolahan**                    | Dapat melakukan pemrosesan dan pemformatan dokumen dan objek                    | Tidak dapat melakukan pemrosesan dan perhitungan                                                     |
-| **Jenis File**                    | Ukuran besar dan lambat saat parsing                                            | Ukuran besar dan cepat saat parsing                                                                  |
-| **Dukungan Namespaces**           | Mendukung namespaces, komentar, dan metadata                                    | Tidak terdapat dukungan tersebut                                                                     |
-| **Ukuran dokumen**                | Ukuran dokumen besar degnan struktur tag yang tidak readable                    | Human readable                                                                                       |
-| **Jenis Tipe data yang didukung** | Mendukung bagan, charts, dan data non-primitif lain                             | JSON hanya berupa string, angka, boolean, objek, dan array dengan tidak mendukung data non-primitif  |
-| **UTF**                           | Mendukung UTF-8 dan UTF-16                                                      | Mendukung UTF dan ASCII                                                                              |
-| **Pengolahan data**               | Permintaan AJAX menjadi lambat karena bandwith untuk memproses tag sangat besar | Perminataan Ajak relatif cepat                                                                       |
-
-<br></br>
-# **Mengapa kita memerlukan *data* *delivery* dalam pengimplementasian sebuah platform ?**
-
-Dalam mengimplementasikan sebuah platform,  kita sebagai developer pasti ingin membuat semua fungsionalitas dari platform dapat berfungsi dengan baik. Kita tahu bahwa fungsionalitas setiap komponen platform itu berfungsi adalah input (requests) dan output (responses) sinkron. Dalam sebuah web-platform, ada banyak komponen:
-- Browser request HTML page, maka server juga harus mengembalikan HTML page.
-- Browser request style sheet, maka server juga harus mengembalikan CSS file.
-- Seterusnya berkalu untuk file JPG, JS, XML, JSON, dan data lainnya.
-
-Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan dengan baik. Tanpa adanya pengiriman data berupa HTML, maka browser milik client tidak dapat memuat informasi dan seluruh komponen dari website milik kita ke local network mereka.
-
+### **Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.**
+1. Pengguna memasukkan input ke field form yang dibuat di aplikasi django. 
+2. Ketika pengguna dapat menekan tombol ```submit```. Tombol submit tersebut akan mengirimkan request ```POST```. Request tersebut merujuk pada suatu path di URLs. Kemudian, URLs menjalankan fungsi views yang sesuai.
+3. Pada fungsi ```views```, terdapat sebuah pengecekan lagi. Pertama, input akan dicek apakah valid atau tidak dengan menggunakan fungsi ```forms.is_valid()```, jika belum valid request masih ditolak. Jika valid, form akan membuat sebuah inctance dari models. Instance tersebut, akan disave ke database dengan fungsi ```forms.save()```. 
+4. Sekarang, kita sudah mempunyai satu instance data dari model atau database yang dibuat. Data tersebut akan berada pada section ```nama-app``` > ```nama-model```
+5. Untuk mengambil data dari database, kita perlu menambahkan variabel pada context di views. Untuk mendapat sejumlah ```queryset``` kita dapat menambahkan baris kode berikut.
+   - ```NamaModels.objects.all()``` --> untuk mengambil semua data
+   - ```NamaModels.objects.filter(namaAttribute=value)``` --> untuk mengambil sejumlah data dengan filter tertentu
+   - ```NamaModels.objects.get(namaAttribute=value)``` --> untuk megambil sebuah data yang memiki attribute berisi value.
+6. Agar database dapat tampil di html atau template, kita perlu menambahkan syntax {{namaVariabel}}. Jika kita ingin menampilkan banyak data. Kita bisa menggunakan perintah ```{{for item  in namaVariabel }} {{item.attribute1}} {{item.attribute2}}``` dst. Juga, masih banyak syntax django template yang lain
 
 
 <br></br>
@@ -515,7 +500,14 @@ Peran data delivery inilah yang menjadi dasar sebuah platform dapat berjalan den
 - [x] Melakukan deployment ke Heroku terhadap aplikasi yang sudah kamu buat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
   Untuk melakukan deployment ke heroku. Kita sebenarnya hanya melakukan ```git add```, ```git commit```, ```git push```. Heroku akan otomatis mengupdate data dari repository kita ke website atau aplikasi kita.
   Berikut adalah tampilan dari website heroku saya ketika sudah login.
+  ![User-1](image/user-gabing.gaul.png)
 - [x] Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
+  > ```User 1: gabing.gaul```
+  ![User-1](image/user-gabing.gaul.png)
+
+  > ```User 2: gabiiing```
+  ![User-2](image/user-gabiiing.png)
+
 - [x] Membuat sebuah README.md pada folder todolist yang berisi tautan menuju aplikasi Heroku yang sudah kamu deploy serta jawaban dari beberapa pertanyaan berikut
 - [x] Melakukan Bonus
 - Penjelasan terkait implementasi fitur update status tugas dan delete tugas. Serta, fitur tambahan saya sendiri. Terdapat pada bagian Membuat fitur ```show_todolist```, ```create_task```,```update_task```, ```update_task```, dan ```edit_task```

@@ -70,7 +70,7 @@ def create_task(request):
 @login_required(login_url='/todolist/login/')
 # Fungsi untuk memperbarui status task
 def update_task(request, pk):
-    updated_task = Task.objects.filter(id=pk, user=request.user)
+    updated_task = Task.objects.filter(id=pk, user=request.user).first()
     if updated_task:
         updated_task.is_finished = not updated_task.is_finished
         updated_task.save()
