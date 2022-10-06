@@ -1,15 +1,80 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block meta %}
-<title>Hello!</title>
-{% endblock meta %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
+  <title>Gabriel PBP Assignments</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  {% load static %}
+  
+  <link href="{% static 'static/cover.css' %}" rel="stylesheet">
+  </head>
 {% block content %}
-  <h1>This is a homepage</h1>
-  <h3>Terima kasih telah mengunjungi website ini.</h3>
-  <h3>Anda dapat mengunjungi url berikut untuk melihat hasil tugas saya:</h3>
-  <h3><a href="{% url 'katalog:show_katalog' %}">katalog</a></h3>
-  <h3><a href="{% url 'mywatchlist:show_home' %}"g>mywatchlist</a></h3>
-  <h3><a href="{% url 'todolist:show_todolist' %}"g>todolist</a></h3>
+<div class="text-center flex-column mx-auto my-auto">
+  <div class="cover-container d-flex h-100 p-1 mx-auto flex-column align-middle my-auto">
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Gabriel Zebaoth Krisopras Putra </h1>
+      <p class="lead">Website ini dibuat untuk memenuhi tugas PBP Fasilkom UI Ganjil 2022/2023</p>
+      <p class="lead">
+        <a href="https://github.com/gabiiing/pbp-tugas-2-gabing" class="btn btn-lg btn-secondary">Github Repo</a>
+      </p>
+    </main>
+
+</div class="text-center flex-column mx-auto my">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card " >
+          <div class="card-body">
+            <h5 class="card-title">Watchlist</h5>
+            <p class="card-text">Tugas 2: Pengenalan Aplikasi Django dan Models Views Template (MVT) pada Django</p>
+            <a href="{% url 'katalog:show_katalog' %}" class="btn btn-primary">Go to Link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Katalog</h5>
+            <p class="card-text">Tugas 3 : Pengimplementasian Data Delivery Menggunakan Django</p>
+            <a href= "{% url 'mywatchlist:show_html' %}" class="btn btn-primary">Go to Link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Todolist</h5>
+            <p class="card-text">Tugas 4 : Pengimplementasian Form dan Autentikasi Menggunakan Django dan Tugas 5: Web Design menggunakan HTML, CSS, and CSS Framework</p>
+            <a href="{% url 'todolist:show_todolist' %}" class="btn btn-primary">Go to Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
 {% endblock content %}
+  
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
