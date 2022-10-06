@@ -11,7 +11,7 @@
     <meta name="author" content="" />
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
 
-    <title>Todolist login</title>
+    <title>Todolist Create New Task</title>
     {% load static %}
 
     <link
@@ -31,30 +31,35 @@
 
     <!-- Custom styles for this template -->
 
+    <link href="{% static '../static/login.css' %}" rel="stylesheet" />
   </head>
 
   {% block content %}
 
-  <body class="h-100">
+  <body class="h-100 justify-content-around">
     <h1 class="text-center">Create New Task</h1>
-    <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-          <form class="d-flex flex-column justify-content-center overflow-hidden" method="POST" action="">
-            {% csrf_token %}
-              {{ form.as_table }}
 
-            <center>
-              <input
-                class="btn button btn-dark mx-auto my-2"
-                type="submit"
-                name="submit"
-                value="Create New Task"
-              />
-            </center>
-          </form>
+    <div
+      class="w-100 h-100 d-flex flex-column justify-content-center align-items-center"
+    >
+      <form
+        method="POST"
+        action=""
+        class="d-flex flex-column justify-content-center overflow-hidden"
+      >
+        {% csrf_token %}
+        <table>
+          {{form.as_table}}
+        </table>
 
-          {% if messages %} {% for message in messages %}
-          <p class="message">{{ message }}</p>
-          {% endfor %} {% endif %}
+        <center>
+          <input
+            class="btn button btn-dark mx-auto my-2"
+            type="submit"
+            value="Create"
+          />
+        </center>
+      </form>
 
     </div>
     <script
