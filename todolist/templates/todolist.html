@@ -1,52 +1,71 @@
 {% extends 'base.html' %}
-{% block meta %}
-<title>{{user.username}} Todolist</title>
-<h1>{{user.username}} To-Do's</h1>
-{% endblock meta %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}  
-    <head>
-        {% load static %}
-    </head>
-    <!-- Button untuk membuat tugas Bary -->
-    <button><a href="{% url 'todolist:create' %}">Add New Task</a></button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <h2>Task List:</h2>
-    <table>
-        <tr>
-        <!-- membuat header table-->
-          <th>Create Date</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>Update</th>
-          <th>Delete</th>
-          <th>Edit</th>
-        </tr>
-        {% comment %} Add the data below this line {% endcomment %}
-        <!-- Mengiterasi data tugas pada query database -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/style.css' %}">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+
+  {% block meta %}
+  {% endblock meta %}
+</head>
+{% block content %}
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#">{{user.username}}</a>
+      <nav class="navbar navbar-dark bg-dark">
+        <form class="form-inline">
+          <a href="{% url 'todolist:create' %}" class="btn btn-outline-success" role="button">Tambah Tugas Baru</a>
+          <a href="{% url 'todolist:logout' %}" class="btn btn-outline-danger" role="button">Logout</a>
+        </form>
+      </nav>
+    </div>
+  </nav>
+
+  <div class="justify-content-center text-center">
+    <h1 class="">{{user.username}}'s todolists</h1>
+  </div>
+
+  <div>
+    
+  </div>
+</div class="text-center flex-column mx-auto my-auto">
+    <div class="container">
+     <div class="row justify-content-center">
         {% for task in task_list %}
-            <tr>
-                <td>{{task.date}}</td>
-                <th>{{task.title}}</th>
-                <td>{{task.description}}</td>
-                <td> 
-                    <!-- Jika is_finished true: tugas Selesai dan vice versa -->
-                    {% if task.is_finished %}
-                    Selesai
-                    {% else %}
-                    Belum Selesai
-                    {% endif %}
-                </td>
-                <!-- Implementasi fungsi diviews pada button html disetiap task -->
-                <!-- Kegunaan task.id adalah untuk mengupdate data task dengan id tersebut -->
-                <!-- Task.id akan digunakan sebagai parameter pk di fungsi update, delete, dan edit di views.py -->
-                <td><button><a href="{% url 'todolist:update' task.id %}">Update</a></button></td>
-                <td><button><a href="{% url 'todolist:delete' task.id %}">Delete</a></button></td>
-                <td><button><a href="{% url 'todolist:edit' task.id %}">Edit</a></button></td>
-            </tr>
+        <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+            <div class="card-body"
+            <h3 class="card-title">{{ task.title }}</h3>
+            <h6 class="card-subtitle">{{ task.date }} - {% if task.is_finished %}
+                Selesai
+                {% else %}
+                Belum Selesai
+                {% endif %} </h6>
+
+            <p class="card-text">{{task.description}}</p>
+            <a href="{% url 'todolist:update' task.id %}" class="btn btn-outline-success p-1 mx-auto my-auto" role="button">Update Status</a>
+            <a href="{% url 'todolist:edit' task.id %}" class="btn btn-outline-warning p-1 mx-auto my-auto" role="button">Edit</a>
+            <a href="{% url 'todolist:delete' task.id %}" class="btn btn-outline-danger p-1 mx-auto my-auto" role="button">Delete</a>
+            </div>
+        </div>
+        </div>
         {% endfor %}
-      </table>
-    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    </div>
+    </div>
+
+  </div>
+  
+  
 
 {% endblock content %}
+</body>
+
+</html>

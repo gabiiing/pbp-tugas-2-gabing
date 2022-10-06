@@ -1,45 +1,100 @@
 {% extends 'base.html' %}
 
-{% block meta %}
-<title>Login</title>
-{% endblock meta %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
 
-{% block content %}
+    <title>Todolist login</title>
+    {% load static %}
 
-<div class = "login">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
 
-    <h1>Login</h1>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.0/examples/cover/"
+    />
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet" />
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+    <!-- Custom styles for this template -->
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+    <link href="{% static '../static/login.css' %}" rel="stylesheet" />
+  </head>
 
-</div>
+  {% block content %}
 
-{% endblock content %}
+    <body class="h-100  justify-content-around">
+        <h1 class="text-center">Login</h1>
+
+      <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+            <form method="POST" action="" class="d-flex flex-column justify-content-center overflow-hidden">
+              {% csrf_token %}
+              <table>
+                <tr class="my-2">
+                  <td>Username</td>
+                  <td>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      class="form-control"
+                    />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Password</td>
+                  <td>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      class="form-control"
+                    />
+                  </td>
+                </tr>
+              </table>
+
+              <center>
+                <input class="btn button btn-dark mx-auto my-2" type="submit" value="Login" />
+              </center>
+            </form>
+
+            {% if messages %} {% for message in messages %}
+            <p class="message">{{ message }}</p>
+            {% endfor %} {% endif %}
+
+            <p>
+              Don't have an account yet?
+              <b><a href="{% url 'todolist:register' %}">Sign up!</a></b>
+            </p>
+      </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+  {% endblock content %}
+</html>
