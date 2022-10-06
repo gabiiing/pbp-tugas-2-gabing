@@ -1,4 +1,77 @@
-<h3>Get data from here:</h3>
-<a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/html">Get HTML Data</a> <br>
-<a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/xml">Get XML Data</a> <br>
-<a href="https://gabing-pbp-tugas2.herokuapp.com/mywatchlist/json">Get JSON Data</a>
+{% extends 'base.html' %}
+
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Cover Template for Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  {% load static %}
+  
+  <link href="{% static 'static/cover.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<body>
+
+<div class="text-center flex-column mx-auto my-auto">
+  <div class="cover-container d-flex h-100 p-1 mx-auto flex-column align-middle my-auto">
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Mywatchlist Data Delivery </h1>
+      <p class="lead">Data delivery dari django database ke HTML, JSON, dan XML</p>
+      <p class="lead">
+      </p>
+    </main>
+
+</div class="text-center flex-column mx-auto my">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">HTML Data</h5>
+            <a href="{% url 'mywatchlist:show_html' %}" class="btn btn-primary">Get HTML Data</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">JSON Data</h5>
+            <a href= "{% url 'mywatchlist:show_json' %}" target="_blank" class="btn btn-primary">Get JSON Data</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">XML Data</h5>
+            <a href="{% url 'mywatchlist:show_xml' %}" target="_blank" class="btn btn-primary">Get XML Data</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+{% endblock content %}
+  
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+
+
+</html>
