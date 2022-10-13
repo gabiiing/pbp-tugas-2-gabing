@@ -85,11 +85,11 @@ Berikut adalah link hasil pengerjaan tugas saya
 
 
 ### **Jelaskan CSS selector yang Anda Ketahui?.**
-1 .```.class``` untuk memilih semua elemen dengan class="namaclass"
-1 .```#id``` untuk memilih semua elemen dengan id="id" 
-1 .```*``` untuk memilih semua elemen apapun 
-1 .```element, element``` untuk memilih dua elemen sekaligus 
-1 .```element.class``` untuk memilih elemen X dengan class="Y" 
+1. ```.class``` untuk memilih semua elemen dengan class="namaclass"
+2. ```#id``` untuk memilih semua elemen dengan id="id" 
+3. ```*``` untuk memilih semua elemen apapun 
+4. ```element, element``` untuk memilih dua elemen sekaligus 
+5. ```element.class``` untuk memilih elemen X dengan class="Y" 
 
 
 
