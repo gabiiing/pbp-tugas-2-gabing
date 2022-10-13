@@ -1,3 +1,6 @@
+from calendar import c
+from http.client import REQUEST_ENTITY_TOO_LARGE
+import re
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -9,15 +12,24 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.form import CreateTask
 from todolist.models import Task
+from django.http import HttpResponse
+from django.core import serializers
+from django.shortcuts import render, get_object_or_404
+from django.core import serializers
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+import json
+from django.urls import reverse
+from django.views.generic import View
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    task_list = Task.objects.filter(user = request.user).all()
-    context = {
-        'task_list': task_list
-    }
-    return render(request, 'todolist.html', context)
+    # task_list = Task.objects.filter(user = request.user).all()
+    # context = {
+    #     'task_list': task_list
+    # }
+    return render(request, 'todolist_ajax.html')
 
 
 def register(request):
@@ -66,28 +78,32 @@ def create_task(request):
         form = CreateTask(initial={'user': request.user})
     context = {'form': form}
     return render(request, 'create_task.html', context)
-
+    
 @login_required(login_url='/todolist/login/')
-# Fungsi untuk memperbarui status task
+@csrf_exempt
 def update_task(request, pk):
-    updated_task = Task.objects.filter(id=pk, user=request.user).first()
+    updated_task = Task.objects.filter(pk=pk, user=request.user).first()
     if updated_task:
         updated_task.is_finished = not updated_task.is_finished
         updated_task.save()
-
     return redirect("todolist:show_todolist")
 
-@login_required(login_url='/todolist/login/')
 # Fungsi untuk memperbarui status task
+@csrf_exempt
+@login_required(login_url='/todolist/login/')
 def delete_task(request, pk):
-    delete_task = Task.objects.get(id=pk)
-    delete_task.delete() 
-    return redirect("todolist:show_todolist")
+    if request.method == 'DELETE':
+        delete_task = Task.objects.get(pk=pk, user=request.user)
+        delete_task.delete() 
+        return JsonResponse({"status": "Success delete task"},status=200)
+    else:
+        return JsonResponse({"status": "Failed delete task"},status=403)
+
 
 @login_required(login_url='/todolist/login/')
 # Fungsi untuk memperbarui status task
 def edit_task(request, pk):
-    task = Task.objects.get(id=pk)
+    task = Task.objects.get(pk=pk, user=request.user)
     form = CreateTask(instance=task)
     if request.method == 'POST':
         form = CreateTask(request.POST, instance=task)
@@ -98,4 +114,28 @@ def edit_task(request, pk):
             return redirect('todolist:show_todolist')
     context = {'form': form}
     return render(request, 'create_task.html', context)
+
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    task_list = Task.objects.filter(user = request.user).all()
+    return HttpResponse(serializers.serialize("json",task_list), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+def show_json_by_id(request, pk):
+    data = Task.objects.filter(pk=pk)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+def save_task(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        task = Task(title=title, description=description, user=request.user)
+        task.save()
+        return JsonResponse({'status': 'success'}, status=200)
+    else:
+        return JsonResponse({'status': 'forbidden'}, status=403)
+
+
         
