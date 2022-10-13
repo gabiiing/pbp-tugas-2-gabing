@@ -70,8 +70,8 @@
                     </div>
         
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary" data-dismiss="modal fade" >Save changes</button>
-                      <button type="close" class="btn btn-secondary" data-dismiss="modal fade">Close</button>
+                      <button type="submit" class="btn btn-primary" data-dismiss="modal fade" >Add Task</button>
+                      <button type="button" class="btn btn-secondary" onClick="closeModal()" data-dismiss="modal fade">Close</button>
                   </div>
 
                 </form>
@@ -125,6 +125,10 @@
     loadTaskData();
   });
 
+  function closeModal(){
+    $("#createTaskForm").trigger('reset');
+    $('#createTaskModal').modal("hide")
+  }
   $(document).on("submit", "#createTaskForm", function(e) {
         e.preventDefault();
         $.ajax ({
