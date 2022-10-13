@@ -24,6 +24,7 @@ Berikut adalah ```link``` hasil pengerjaan tugas saya
 - [Tugas 3 : Pengimplementasian Data Delivery Menggunakan Django](mywatchlist/README.md)
 - [Tugas 4 : Pengimplementasian Form dan Autentikasi Menggunakan Django](todolist/README.md)
 - [Tugas 5 : Web Design Using HTML, CSS, and CSS Framework](todolist/templates/README.md)
+- [Tugas 6 : AJAX & JavaScript](todolist/README-TWO.md)
   
 ## Credits
 Tugas ini dibuat dengan menggunakan template [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage).
