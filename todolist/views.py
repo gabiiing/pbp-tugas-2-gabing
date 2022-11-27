@@ -22,14 +22,6 @@ from django.urls import reverse
 from django.views.generic import View
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-@login_required(login_url='/todolist/login/')
-def show_todolist(request):
-    # task_list = Task.objects.filter(user = request.user).all()
-    # context = {
-    #     'task_list': task_list
-    # }
-    return render(request, 'todolist_ajax.html')
 
 
 def register(request):
@@ -63,6 +55,12 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('todolist:login')
+
+# --------------------------------------- AJAX -------------------------------------------------
+# Create your views here.
+@login_required(login_url='/todolist/login/')
+def show_todolist(request):
+    return render(request, 'todolist_ajax.html')
 
 @login_required(login_url='/todolist/login/')
 def create_task(request):
@@ -99,6 +97,19 @@ def delete_task(request, pk):
     else:
         return JsonResponse({"status": "Failed delete task"},status=403)
 
+@login_required(login_url='/todolist/login/')
+def save_task(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        task = Task(title=title, description=description, user=request.user)
+        task.save()
+        return JsonResponse({'status': 'success'}, status=200)
+    else:
+        return JsonResponse({'status': 'forbidden'}, status=403)
+
+
+# ---------------------------------------------------------------------------------
 
 @login_required(login_url='/todolist/login/')
 # Fungsi untuk memperbarui status task
@@ -126,16 +137,4 @@ def show_json_by_id(request, pk):
     data = Task.objects.filter(pk=pk)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
-@login_required(login_url='/todolist/login/')
-def save_task(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        description = request.POST.get('description')
-        task = Task(title=title, description=description, user=request.user)
-        task.save()
-        return JsonResponse({'status': 'success'}, status=200)
-    else:
-        return JsonResponse({'status': 'forbidden'}, status=403)
 
-
-        

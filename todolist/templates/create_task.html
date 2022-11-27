@@ -42,14 +42,12 @@
             {% csrf_token %}
               {{ form.as_table }}
 
-            <center>
               <input
                 class="btn button btn-dark mx-auto my-2"
                 type="submit"
                 name="submit"
                 value="Create New Task"
               />
-            </center>
           </form>
 
           {% if messages %} {% for message in messages %}

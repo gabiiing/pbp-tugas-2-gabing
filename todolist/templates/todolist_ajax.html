@@ -85,11 +85,43 @@
   {% block javascript %}
 
 <script>
+
+  // function loadTaskData(){
+  //     document.getElementById('taskContainer').innerHTML = ""
+  //     let cardDataHTML = ""
+  //     $.ajax({
+  //       url: '/todolist/json/',
+  //       type: "GET",
+  //       dataType: 'JSON',
+  //       success: function(datalist){
+  //         for(let data of datalist){
+  //           cardDataHTML+=`
+  //           <div class="col-sm-6 col-md-4 col-lg-3 p-1" id="task-${data.pk}">
+  //               <div class="card">
+  //                 <div class="card-body">
+  //                   <h3 class="card-title" id="cardTitle-${data.pk}"> ${ data.fields.title } </h3>
+  //                   <h6 class="card-subtitle" >  ${data.fields.date}</h6>
+  //                   <h6 class="card-subtitle" id="cardSubtitle-${data.pk}"> ${taskStatus}</h6>
+  //                   <p class="card-text">  ${ data.fields.description } </p>
+  //                   <button id="button-update-task-${data.pk}"  class="btn btn-outline-warning p-1 mx-auto my-auto" onClick="updateTaskStatus(${data.pk})" role="button">Update</button>
+  //                   <button id="button-delete-task-${data.pk}"  class="btn btn-outline-danger p-1 mx-auto my-auto" onClick="deleteTask(${data.pk})" role="button">Delete</button>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           `
+  //         }
+  //         document.getElementById('taskContainer').innerHTML = cardDataHTML
+  //       },
+  //       error: function(response){
+  //         console.log("error")
+  //       }
+  //     })
+  // }
   function loadTaskData() {
     let taskCardHTML = ''
     $("#taskContainer").append('');
     $.ajax({
-      url: "/todolist/json/",
+      url: "/todolist/json/", 
       type: "GET",
       dataType: "json",
       success: function (dataList){
@@ -119,15 +151,18 @@
         console.log('Eror: ');
       }
     });
-  }
+  } 
+
+
   $(document).ready(function () {
     loadTaskData();
   });
 
   function closeModal(){
-    $("#createTaskForm").trigger('reset');
+    $("#createTaskForm").trigger('reset');  
     $('#createTaskModal').modal("hide")
   }
+
   $(document).on("submit", "#createTaskForm", function(e) {
         e.preventDefault();
         $.ajax ({
@@ -141,8 +176,7 @@
             },
             success: function(data) {
                 loadTaskData();
-                $("#createTaskForm").trigger('reset');
-                $('#createTaskModal').modal("hide")
+                
 
             }
         })
